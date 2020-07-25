@@ -13,3 +13,22 @@ category: misc
 type: Miscellaneous
 standard: global
 ---
+
+** Warning **
+After flashing the device is working in Toggle Mode, that means by pushing the button it works until the button is pushed again. (This could be unconfortable for you and your fishes...)
+
+Also it will Power On (feed the fishes) every time it boots up.
+
+So, to fix the problem you can give in the Console the following commands:
+
+```console
+PulseTime 50
+'''
+
+This would feed with Power for 500ms the relay from the motor that has hardware interlock, allowing only for one turn as it came with the original firmware (ignore it if you still want to use it in Toggle Mode)
+
+And this command will keep the motor from spinning after the Fish Feeder is booting up:
+
+'''console
+PowerOnState 0
+'''
